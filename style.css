@@ -1,0 +1,149 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background: #0a0a0a;
+  color: #fff;
+  overflow-x: hidden;
+  overflow-y: auto;
+  touch-action: pan-y;
+}
+
+#background {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.gradient {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, #0a0a0a, #101010, #1a1a1a, #0b0b0b);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.card {
+  width: 400px;
+  max-width: 90%;
+  margin: 50px auto;
+  background: rgba(25, 25, 25, 0.85);
+  border-radius: 25px;
+  padding: 55px 40px 40px 40px;
+  text-align: center;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 35px rgba(0, 255, 255, 0.05);
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 1.2s ease forwards;
+}
+
+.profile-img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.3);
+  object-fit: cover;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  box-shadow: 0 0 30px rgba(0,255,255,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.profile-img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 45px rgba(0,255,255,0.35);
+}
+
+h1 {
+  margin: 0;
+  font-size: 2em;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  color: #0ff;
+  background: linear-gradient(90deg, #0ff, #09f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 8px rgba(0,255,255,0.25);
+}
+
+h2 {
+  margin: 5px 0 25px;
+  font-size: 1em;
+  color: #bbb;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.about {
+  font-size: 0.95em;
+  color: #ccc;
+  margin-bottom: 30px;
+  line-height: 1.6em;
+}
+.about span {
+  color: #0ff;
+  font-weight: 600;
+}
+
+.socials {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 250px;
+  padding: 10px 15px;
+  font-size: 1em;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.05);
+  box-shadow: 0 0 8px rgba(0,255,255,0.1);
+}
+.social-btn i {
+  font-size: 1.3em;
+}
+.social-btn:hover {
+  transform: scale(1.05) rotate(-2deg);
+  box-shadow: 0 0 20px rgba(0,255,255,0.3);
+}
+
+.whatsapp { background-color: #25D366; color: #fff; }
+.instagram { background-color: #E4405F; color: #fff; }
+.linkedin { background-color: #0077B5; color: #fff; }
+.github { background-color: #333; color: #fff; }
+.mail { background-color: #C23A2B; color: #fff; }
+.vcard { background-color: #0ff; color: #000; }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 480px) {
+  .card { padding: 40px 20px 30px 20px; }
+  h1 { font-size: 1.8em; }
+  h2 { font-size: 0.95em; }
+  .about { font-size: 0.9em; }
+  .social-btn { max-width: 220px; font-size: 0.95em; padding: 9px 12px; }
+  .profile-img { width: 120px; height: 120px; }
+}
